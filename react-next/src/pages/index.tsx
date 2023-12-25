@@ -1,4 +1,4 @@
-import Batching from '@/exercices/batching';
+import Comp1 from '@/exercices/renderOrder';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
 	return (
 		<>
-			<Batching />
+			<Comp1 />
 		</>
 	);
 }

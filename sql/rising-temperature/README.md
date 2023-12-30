@@ -1,0 +1,4 @@
+## Task Provider - Leetcode (easy)
+
+[Task Link](https://leetcode.com/problems/rising-temperature/description/)
+    

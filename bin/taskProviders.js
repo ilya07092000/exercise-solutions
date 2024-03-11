@@ -69,8 +69,12 @@ class LeetcodeTaskProvider extends BaseTaskProvider {
   }
 
   async init() {
-    await super.init();
-    this.extractTaskDifficulty();
+    /**
+     * Data fetching from leetcode does not work so far
+     */
+    // await super.init();
+    // this.extractTaskDifficulty();
+    this.extractTaskName();
   }
 }
 

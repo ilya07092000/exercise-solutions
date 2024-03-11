@@ -31,7 +31,12 @@ const taskProviders = {
 /**
  * creates readme file with necessary info and task file depends on task type
  */
-const createTask = async ({taskType = 'js', taskLink, taskProvider}) => {
+const createTask = async ({
+  taskType = 'js',
+  taskLink,
+  taskProvider,
+  taskDifficulty,
+}) => {
   // check whether task provider is valid
   if (!Object.values(TASK_PROVIDERS).includes(taskProvider)) {
     throw new Error(
@@ -53,6 +58,8 @@ const createTask = async ({taskType = 'js', taskLink, taskProvider}) => {
   // extract task info in corresponding provider
   const taskInfo = new taskProviders[taskProvider]({taskUrl: taskLink});
   await taskInfo.init();
+
+  taskInfo.difficulty = taskDifficulty;
 
   // identify task directory by task type
   const taskPath = path.join(taskPathsByType[taskType], taskInfo.taskName);

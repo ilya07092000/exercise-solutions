@@ -25,6 +25,16 @@ const questions = [
     name: 'taskLink',
     message: 'Task Link',
   },
+  {
+    type: 'select',
+    name: 'taskDifficulty',
+    message: 'Task Difficulty?',
+    choices: [
+      {title: 'Easy', value: 'easy'},
+      {title: 'Medium', value: 'medium'},
+      {title: 'Hard', value: 'hard'},
+    ],
+  },
 ];
 
 (async () => {

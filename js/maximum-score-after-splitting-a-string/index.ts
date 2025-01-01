@@ -1,31 +1,29 @@
 function maxScore(s: string): number {
-	let ones = 0;
-	let zeros = 0;
+  let zeros = 0;
+  let ones = 0;
+  let bestSoFar = 0;
 
-	let onesLeft = 0;
+  if (+s[0] === 0) {
+    zeros += 1;
+  }
 
-	let result = 0;
+  for (let i = 1; i < s.length; i += 1) {
+    if (+s[i] === 1) {
+      ones += 1;
+    }
+  }
 
-	for (let i = 0; i < s.length; i += 1) {
-		if (+s[i] === 1) {
-			ones += 1;
-		}
-	}
-	onesLeft = ones;
+  bestSoFar = zeros + ones;
 
-	if (!ones) {
-		return s.length - 1;
-	}
+  for (let i = 1; i < s.length - 1; i += 1) {
+    if (+s[i] === 0) {
+      zeros += 1;
+    } else {
+      ones -= 1;
+    }
 
-	for (let i = 0; i < s.length - 1; i += 1) {
-		if (+s[i] === 1) {
-			onesLeft -= 1;
-		} else {
-			zeros += 1;
-		}
+    bestSoFar = Math.max(zeros + ones, bestSoFar);
+  }
 
-		result = Math.max(result, zeros + onesLeft);
-	}
-
-	return result;
+  return bestSoFar;
 }

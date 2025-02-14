@@ -8,9 +8,11 @@ const {LeetcodeTaskProvider} = require('./taskProviders');
  */
 const JS_PATH = path.resolve(__dirname, '../js');
 const SQL_PATH = path.resolve(__dirname, '../sql');
+const PY_PATH = path.resolve(__dirname, '../py');
 const taskTypes = {
   SQL: 'sql',
   JS: 'js',
+  PY: 'py',
 };
 const TASK_PROVIDERS = {
   LEETCODE: 'leetcode',
@@ -19,10 +21,12 @@ const TASK_PROVIDERS = {
 const taskPathsByType = {
   [taskTypes.SQL]: SQL_PATH,
   [taskTypes.JS]: JS_PATH,
+  [taskTypes.PY]: PY_PATH,
 };
 const taskExtensionByType = {
   [taskTypes.SQL]: 'sql',
   [taskTypes.JS]: 'ts',
+  [taskTypes.PY]: 'py',
 };
 const taskProviders = {
   [TASK_PROVIDERS.LEETCODE]: LeetcodeTaskProvider,

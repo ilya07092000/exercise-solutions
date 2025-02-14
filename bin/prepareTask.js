@@ -18,6 +18,7 @@ const questions = [
     choices: [
       {title: 'JS', value: 'js'},
       {title: 'SQL', value: 'sql'},
+      {title: 'Python', value: 'py'},
     ],
   },
   {

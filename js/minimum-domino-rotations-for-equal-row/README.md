@@ -1,0 +1,3 @@
+## Task Provider - Leetcode (medium)
+
+[Task Link](https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/description/?envType=daily-question&envId=2025-05-03)

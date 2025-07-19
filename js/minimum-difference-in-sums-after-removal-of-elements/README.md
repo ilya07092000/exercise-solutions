@@ -1,0 +1,3 @@
+## Task Provider - Leetcode (medium)
+
+[Task Link](https://leetcode.com/problems/minimum-difference-in-sums-after-removal-of-elements/description/?envType=daily-question&envId=2025-07-18)

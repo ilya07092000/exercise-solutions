@@ -1,0 +1,3 @@
+## Task Provider - Leetcode (easy)
+
+[Task Link](https://leetcode.com/problems/count-hills-and-valleys-in-an-array/description/?envType=daily-question&envId=2025-07-27)

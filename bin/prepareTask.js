@@ -19,6 +19,7 @@ const questions = [
       {title: 'JS', value: 'js'},
       {title: 'SQL', value: 'sql'},
       {title: 'Python', value: 'py'},
+      {title: 'Java', value: 'java'},
     ],
   },
   {

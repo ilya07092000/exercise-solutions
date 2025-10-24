@@ -1,8 +1,15 @@
-const directions = [
+const pacificDirections = [
   {x: 0, y: -1}, // top
   {x: -1, y: 0}, // left
   {x: 1, y: 0}, // right
   {x: 0, y: 1}, // bottom
+];
+
+const atlanticDirections = [
+  {x: 0, y: 1}, // bottom
+  {x: 1, y: 0}, // right
+  {x: 0, y: -1}, // top
+  {x: -1, y: 0}, // left
 ];
 
 const isValidCoordinate = ([y, x]: [number, number], heights: number[][]) => {
@@ -24,6 +31,8 @@ const fillReachablePoints = (
   direction: 'pacific' | 'atlantic',
 ) => {
   const visited = new Set<string>();
+  const directions =
+    direction === 'pacific' ? pacificDirections : atlanticDirections;
 
   const dfs = ([y, x]: [number, number]) => {
     if (paths[y][x] === 1) {
@@ -66,10 +75,22 @@ const fillReachablePoints = (
     paths[y][x] = 0;
   };
 
-  for (let i = 0; i < heights.length; i += 1) {
-    for (let j = 0; j < heights[0].length; j += 1) {
-      if (!visited.has(getKey(i, j))) {
-        dfs([i, j]);
+  if (paths.length > 1) {
+    if (direction === 'pacific') {
+      for (let i = 1; i < heights.length; i += 1) {
+        for (let j = 1; j < heights[0].length; j += 1) {
+          if (!visited.has(getKey(i, j))) {
+            dfs([i, j]);
+          }
+        }
+      }
+    } else {
+      for (let i = heights.length - 2; i >= 0; i -= 1) {
+        for (let j = heights[0].length - 2; j >= 0; j -= 1) {
+          if (!visited.has(getKey(i, j))) {
+            dfs([i, j]);
+          }
+        }
       }
     }
   }
